@@ -1,17 +1,10 @@
 ﻿USE ROLE ACCOUNTADMIN;
-/* -- ============================================================
--- 00_admin / 001_roles_and_grants.sql
--- Bootstrap securite + environnements {{env}}/PROD
--- Idempotent (relançable)
--- Executer avec un role admin (ACCOUNTADMIN)
--- ============================================================ */
 
 -- 1) ROLES
 CREATE ROLE IF NOT EXISTS {{env}}_ROLE;
 CREATE ROLE IF NOT EXISTS PROD_ROLE;
 
 -- Optionnel : donner {{env}}_ROLE Ã  ton user (Ã  adapter si besoin)
--- (Ton user existe dÃ©jÃ  si tu te connectes avec tdiallo)
 GRANT ROLE {{env}}_ROLE TO USER tdiallo;
 GRANT ROLE PROD_ROLE TO USER tdiallo;
 
