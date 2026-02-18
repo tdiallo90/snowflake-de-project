@@ -1,11 +1,13 @@
-﻿-- ============================================================
+﻿USE ROLE ACCOUNTADMIN;
+
+-- ============================================================
 -- 00_admin / 001_roles_and_grants.sql
--- Bootstrap sÃ©curitÃ© + environnements {{env}}/PROD
--- Idempotent (relanÃ§able)
--- ExÃ©cuter avec un rÃ´le admin (ACCOUNTADMIN)
+-- Bootstrap securite + environnements {{env}}/PROD
+-- Idempotent (relançable)
+-- Executer avec un role admin (ACCOUNTADMIN)
 -- ============================================================
 
-USE ROLE ACCOUNTADMIN;
+
 
 -- 1) ROLES
 CREATE ROLE IF NOT EXISTS {{env}}_ROLE;
@@ -77,6 +79,6 @@ GRANT CREATE TABLE, CREATE DYNAMIC TABLE, CREATE VIEW, CREATE STAGE, CREATE TASK
   ON FUTURE SCHEMAS IN DATABASE DB_POLLUTION TO ROLE PROD_ROLE;
 
 -- 6) (Optionnel) Permissions de lecture cross-env
--- Par dÃ©faut on Ã©vite {{env}} -> PROD et PROD -> {{env}}.
+-- Par defaut on evite {{env}} -> PROD et PROD -> {{env}}.
 -- Tu pourras ajouter plus tard si besoin
 
