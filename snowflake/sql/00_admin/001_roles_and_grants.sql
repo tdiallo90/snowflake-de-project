@@ -1,13 +1,10 @@
 ﻿USE ROLE ACCOUNTADMIN;
-
--- ============================================================
+/* -- ============================================================
 -- 00_admin / 001_roles_and_grants.sql
 -- Bootstrap securite + environnements {{env}}/PROD
 -- Idempotent (relançable)
 -- Executer avec un role admin (ACCOUNTADMIN)
--- ============================================================
-
-
+-- ============================================================ */
 
 -- 1) ROLES
 CREATE ROLE IF NOT EXISTS {{env}}_ROLE;
